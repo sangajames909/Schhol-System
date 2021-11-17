@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Post assignments</title>
+    <link rel="stylesheet" href="../static/bootstrap-5.0.0-beta1-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/post.css">
+
+</head>
+<body>
+ <h1 class="text-info text-center">Post Assignment</h1>
+<div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+        {% with messages = get_flashed_messages() %}
+            {%  for message in messages %}
+            <p>{{ message }}</p>
+            {% endfor %}
+        {% endwith %}
+        <form action="" method="post" enctype = "multipart/form-data">
+            <div class="form-group">
+               <input class="form-control" type="text" name="v" placeholder="Enter name of the assignment">
+            </div>
+            <br>
+             <div class="form-group">
+               <input class="form-control" type="text" name="w" placeholder="Enter Course name">
+            </div>
+            <br>
+            <div class="form-group">
+               <input class="form-control" type="date" name="x" placeholder="Enter start date">
+            </div>
+            <br>
+            <div class="form-group">
+               <input class="form-control" type="date" name="y" placeholder="Enter due date">
+            </div>
+            <br>
+            <div class="form-control">
+                <input type="file" class="form-control" name="z">
+            </div>
+            <br>
+            <div class="form-control">
+                <input id="btn" type="submit" class="btn btn-success btn-block" value="Submit">
+            </div>
+        </form>
+    </div>
+<div class="col-2"></div>
+</div>
+
+</body>
+</html>

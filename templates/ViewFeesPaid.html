@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fees Payment</title>
+    <link rel="stylesheet" href="../static/bootstrap-5.0.0-beta1-dist/css/bootstrap.css">
+</head>
+<body>
+<div class="row">
+    <div class="col-2"></div>
+    <div class="col-9">
+    <h1 class="text-center text-primary">Fees Payment Record</h1>
+    <br>
+        <table class="table table-info" >
+            <tr>
+                <th>Student Name</th>
+                <th>Student class</th>
+                <th>Date paid</th>
+                <th>Fees Paid (Kes)</th>
+                <th>Amount Paid (Kes)</th>
+                <th>Balance left(Kes)</th>
+                <th>Delete</th>
+                 <th>Generate Receipt</th>
+            </tr>
+            {% for paid in paid %}
+            <tr>
+                <td>{{ paid.studentname }}</td>
+                <td>{{ paid.studentclass }}</td>
+                <td>{{ paid.date }}</td>
+                <td>{{ paid.feesamount }}</td>
+                <td>{{ paid.amountpaid }}</td>
+                <td>{{ paid.balance }}</td>
+                <td><a class="btn btn-info" href="/deleting/{{ paid.id }}">Delete</a></td>
+                <td><a class="btn btn-warning" href="/generate_receipt/{{ paid.studentID }}">Generate Receipt</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+<div class="col-2"></div>
+</div>
+
+</body>
+</html>

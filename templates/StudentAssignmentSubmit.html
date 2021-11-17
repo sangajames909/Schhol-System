@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Submit Assignment</title>
+    <link rel="stylesheet" href="../static/bootstrap-5.0.0-beta1-dist/css/bootstrap.css">
+
+</head>
+<body>
+<h1 class="text-success text-center">Submit Assignment</h1>
+ <div class="row">
+     <div class="col-2"></div>
+ <div class="col-6">
+     {% with messages = get_flashed_messages() %}
+            {%  for message in messages %}
+            <p>{{ message }}</p>
+            {% endfor %}
+        {% endwith %}
+        <form action="" method="post" enctype = "multipart/form-data">
+               <div class="form-group">
+               <input class="form-control" type="text" name="v" placeholder="Enter your name">
+            </div>
+            <br>
+            <div class="form-group">
+               <input class="form-control" type="text" name="w" placeholder="Enter name of the assignment">
+            </div>
+            <br>
+             <div class="form-group">
+               <input class="form-control" type="text" name="x" placeholder="Enter Course name">
+            </div>
+            <br>
+            <div class="form-control">
+                <input type="file" class="form-control" name="y">
+            </div>
+            <br>
+            <div class="form-control">
+                <input id="btn" type="submit" class="btn btn-outline-secondary btn-block" value="Submit">
+            </div>
+        </form>
+ </div>
+ </div>
+</body>
+</html>

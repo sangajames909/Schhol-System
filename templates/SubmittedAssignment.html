@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Assignment Posted</title>
+    <link rel="stylesheet" href="../static/bootstrap-5.0.0-beta1-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/viewassignmentposted.css">
+</head>
+<body>
+<div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+    <h1 class="text-center text-danger">View Assignment Submitted</h1>
+    <br>
+        <table class="table table-info">
+            <tr>
+                <th>Student Name</th>
+                <th>Assignment name</th>
+                <th>Course name</th>
+                <th>Assignment Files</th>
+                <th>Delete</th>
+            </tr>
+            {% for assignment in assignments %}
+            <tr>
+                <td>{{ assignment.student_name }}</td>
+                <td>{{ assignment.assignment_name }}</td>
+                <td>{{ assignment.course_name }}</td>
+                <td><a class="btn btn-outline-success" href="/view_assignment_details/{{ assignment.id }}">View</a></td>
+{#                <iframe src="../static/resources/{{ assignment.file }}" frameborder="0"></iframe>#}
+                <td><a class="btn btn-warning" href="/delete_submit/{{ assignment.id }}">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+<div class="col-2"></div>
+</div>
+
+</body>
+</html>

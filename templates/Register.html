@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teacher's Registration</title>
+    <link rel="stylesheet" href="../static/bootstrap-5.0.0-beta1-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/register.css">
+
+</head>
+<body class="shadow-lg">
+<h1 class="text-warning text-center">TEACHER & STUDENT REGISTRATION</h1>
+<div class="row">
+    <div class="col-2"></div>
+    <div class="col-6">
+        <div class="alert alert-success">
+              {% with messages = get_flashed_messages() %}
+            {%  for message in messages %}
+            <p>{{ message }}</p>
+            {% endfor %}
+        {% endwith %}
+        </div>
+    <form action="" method="post">
+        <div class="form-group">
+                <input class="form-control" type="text" name="w" placeholder="Enter your name">
+        </div>
+        <br>
+        <div class="form-group">
+            <input class="form-control" type="email" name="x" placeholder="Enter your email">
+        </div>
+        <br>
+        <div class="form-group">
+            <input class="form-control" type="password" name="y" placeholder="Enter your password">
+        </div>
+        <br>
+        <div class="form-group">
+            <input class="form-control" type="number" name="z" placeholder="Enter your ID">
+        </div>
+        <br>
+          <div class="form-group">
+            <input class="form-control" type="text" name="p" placeholder="Enter your course">
+        </div>
+        <br>
+        <div class="form-group">
+            <select class="form-control" name="role" id="" required>
+                <option value="">Select user role</option>
+                <option value="1">Admin</option>
+                <option value="2">Teacher </option>
+                <option value="3">Student </option>
+            </select>
+        </div>
+        <br>
+        <div class="form-group">
+            <input type="submit" class="btn btn-secondary btn-block" type="submit" value="Register here">
+        </div>
+        <br>
+        <div class="form-group">
+           <a class="btn btn-success btn-block" href="/login">Login when account has been created</a>
+        </div>
+    </form>
+    <div class="col-2"></div>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../static/bootstrap-5.0.0-beta1-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename="css/navigation.css") }}">
+</head>
+<body>
+<h1 class="text-info text-center">Welcome Student {{ session["name"] }} </h1>
+<div class="row">
+<div class="col-2"></div>
+    <div class="col-8">
+    <br>
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+            aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+      </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav text-center">
+        <a class="nav-item nav-link active" href="/student_dashboard">Dashboard <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link active" href="/view_fees">Fees report</a>
+         <a class="nav-item nav-link active" href="/submit_assignment">Submit Assignment</a>
+         <a class="nav-item nav-link active" href="/assignment_submit">View Assignment Submitted</a>
+    </div>
+  </div>
+</nav>
+ <br>
+        <table class="table table-hover">
+            <tr>
+               <th>Name</th>
+                <th>Email</th>
+                <th>Student's ID</th>
+                <th>Course</th>
+                <th>Delete</th>
+            </tr>
+             {% for user in users %}
+            <tr>
+                <td>{{ user.username }}</td>
+                <td>{{ user.useremail }}</td>
+                <td>{{ user.studentID }}</td>
+                <td>{{ user.studentcourse }}</td>
+                <td><a class="btn btn-secondary" href="/del/{{ user.id }}">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+<div class="form-group">
+</div>
+<div class="col-2"></div>
+</div>
+</body>
+</html>

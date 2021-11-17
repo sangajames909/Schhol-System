@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fees Receipt</title>
+    <link rel="stylesheet" href="../static/bootstrap-5.0.0-beta1-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/register.css">
+
+</head>
+<body>
+<div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+        <h1 class="text-danger text-center">Fees Payment</h1>
+        <form action="" method="post">
+            <div class="form-group">
+               <input class="form-control" type="text" name="a" placeholder="Enter name of the student">
+            </div>
+            <br>
+             <div class="form-group">
+               <input class="form-control" type="text" name="b" placeholder="Enter class">
+            </div>
+            <br>
+            <div class="form-group">
+               <input class="form-control" type="date" name="c" placeholder="Enter start date">
+            </div>
+            <br>
+            <div class="form-group">
+               <input class="form-control" type="number" name="d" placeholder="Fees amount (Kes)">
+            </div>
+           <br>
+            <div class="form-group">
+               <input class="form-control" type="number" name="e" placeholder="Amount paid (Kes)">
+            </div>
+             <br>
+            <div class="form-group">
+               <input class="form-control" type="number" name="f" placeholder="Balance left (Kes)">
+            </div>
+             <br>
+            <div class="form-group">
+                <select class="form-control" name="student_id" id="" required>
+                    <option value="">Select Student</option>
+                    {% for user in users %}
+                        <option value="{{ user.studentID }}">{{ user.username }}</option>
+                    {% endfor %}
+
+                </select>
+            </div>
+            <br>
+            <div class="form-control">
+                <input type="submit" class="btn btn-outline-secondary btn-block" value="Pay Fees">
+            </div>
+        </form>
+    </div>
+<div class="col-2"></div>
+</div>
+</body>
+</html>
